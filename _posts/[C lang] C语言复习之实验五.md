@@ -1,0 +1,177 @@
+# 写在开始
+实验五应该是我写的最复杂的代码了,基本上没有之一,虽然好像不是最长的代码.
+# 实验五  字符串处理综合应用
+
+一、实验目的
+
+掌握字符串处理的一般方法及字符串处理应用程序的调试方法，能够综合运用选择、循环结构和数组、指针解决一般难度的实际应用问题。
+
+二、实验要求
+
+1．仔细阅读下列实验内容，并编写出相应的C语言源程序。
+
+2．在C语言运行环境下，编辑录入源程序。
+
+3．调试运行源程序， 注意观察调试运行过程中发现的错误及改正方法。
+
+4．掌握如何根据出错信息查找语法错误。
+
+5. 最后提交带有充分注释的源程序文件（扩展名为.c）。 要求该文件必须能够正确地编译及运行，并不得与他人作品雷同。
+
+三、实验内容
+
+编程序实现如下功能：
+
+（1）输入一个小写金额值（如1002307.90）。
+
+（2）将它的每一位分离出来并存入到一个一维数中每位数存入到一个数组元素中。
+
+（3）将它转化为大写金额值并输出（如壹佰万贰仟叁佰零柒元玖角整）。
+
+四、常见问题
+
+疑问1：如何才能分离出整数中的每一位数字？
+
+答：可以利用整数的求余数和除法运算实现数字的离同时将分离出的数字存入到一个事先定义好数组中每个数组元素只存储一位数字。
+
+疑问2：若不能确定整数的实际位数，如何控制分离程？
+
+
+答：可以通过循环控制数字的分离过程，每循环一次出来当前的最末一位，然后去掉最末一位，直分离所有的位。
+
+疑问3：如何控制给某位数字添加合适的数量单位，如万、仟、佰、拾、元？
+　
+
+答：可以根据该数字在原小写数值中的位置进行控制，如第0位单位为“元”，第1位单位为“拾”，依此类推。
+
+# 题目分析
+这个题目我的想法就是做一个堆栈,然后所有的数字作为一个映射压入栈中,连着单位,然后读取的时候直接从栈顶弹出,然后把对应的映射打印到控制台就行了.
+
+这段代码里面我实现堆栈的方式是链表,而且是一个双向链表,开始因为链表连接问题没坑死我.
+# 我的代码
+和之前一样,为了适配VS2017,我改写成了C++版.
+```
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+typedef struct links {
+	char * node;
+	struct links * next;
+	struct links * before;
+}links;
+links *first = NULL;
+links *last = NULL;
+char * money[] = { "分","角","元","拾","佰","仟","万","拾","佰","仟","亿" };
+char * num[] = { "零","壹","贰","叁","肆","伍","陆","柒","捌","玖","拾" };
+void init() {
+	first = (links *)malloc(sizeof(links));
+	last = (links *)malloc(sizeof(links));
+	first->node = "整";
+	first->next = last;
+	first->before = first;
+	last->node = "";
+	last->next = last;
+	last->before = first;
+}
+void append(char * num) {
+	links * now = (links *)malloc(sizeof(links));
+	now->node = num;
+	//不管last的before指向的是first还是别的，先把这个last的before指向的links的next指向now，把last的before指针指向now，然后就结束了
+	now->before = last->before;
+	now->next = last;
+	(last->before)->next = now;
+	last->before = now;
+
+}
+int println(links * link) {
+	printf("%s", link->node);
+	if (link == link->before) return 0;
+	return println(link->before);
+}
+int check_num(char * num, char * first) {
+	char * tmp = num;
+	int tiao = 1;//表示单位向后跳几位
+	if (*tmp>48) {
+		return 0;
+	}
+	while (--tmp>first) {
+		if (*tmp>48) {
+			return tiao;
+		}
+		else if (*tmp == 46) {
+			continue;
+		}
+		else {
+			tiao++;
+		}
+	}
+	if (*tmp>48) {
+		return tiao;
+	}
+	else {
+		return ++tiao;
+	}
+}
+void exchange(char * input) {
+	char * tmp;
+	char * dot;
+	int tmp_num = 0, length[2] = { 0,0 };//tmp_num前期作为临时变量读取length的数据，后期作为check_num的返回值用
+	int number;
+	int level = 0;//用于确定需要写什么单位的
+	tmp = input;
+	do {
+		if (*tmp == 46) {
+			tmp_num++;
+			dot = tmp;
+		}
+		else {
+			length[tmp_num]++;
+		}
+	} while (0 != *(++tmp));
+	if (length[1] == 1) {
+		level = 1;
+	}
+	while (--tmp != input) {
+		if (*tmp == 46) {
+			continue;
+		}
+		else if (check_num(tmp, input)>0) {
+			tmp_num = check_num(tmp, input);//跳这些长度的单位
+			level++;
+			continue;
+		}
+		else {//只有没有零的时候才会执行这段代码
+			append(money[level++]);
+			append(num[(*tmp) - 48]);
+		}
+	}
+	if (*tmp == 46) {
+	}
+	else if (check_num(tmp, input)>0) {
+		tmp_num = check_num(tmp, input);//跳这些长度的单位
+		level++;
+	}
+	else {//只有没有零的时候才会执行这段代码
+		append(money[level++]);
+		append(num[(*tmp) - 48]);
+	}
+}
+
+int main(int argc, char const *argv[]) {
+	/* code */
+	int isa;
+	init();
+	char inputs[100];
+	scanf("%s", inputs);
+	exchange(inputs);
+	isa = println(last);
+	//printf("%s\n",*exchange(input));
+	printf("\n");
+	system("pause");
+	return 0;
+}
+```
+# 写在最后
+这段代码似乎并没有完全解决多个零的问题,但是不是那种一直打印单位的情况,而是单位打印错误,不知道为啥,然后就是小数点问题,没有小数点的时候我也能打印出来分这个单位,因为懒得解决,所以就撂那了,中间应该是忘记了判断小数点位数了.这个代码应该是我写的最复杂的C语言代码了,因为之前我用过一次结构体,结果因为各种BUG无法修复导致我直接放弃掉,所以这应该是我写成功的第一个用结构体做链表的代码了.

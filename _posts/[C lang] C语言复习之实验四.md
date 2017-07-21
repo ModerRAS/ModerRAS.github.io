@@ -1,0 +1,159 @@
+# 写在开始
+这一次写的是实验四.
+# 实验四  循环与数组程序综合应用
+
+一、实验目的：
+掌握循环与数组程序设计的一般方法及循环与数组程序的调试方法，能够综合运用顺序、选择、循环和数组解决一般难度的实际应用问题。
+二、实验要求
+
+1． 仔细阅读下列实验内容，并编写出相应的C语言源程序。
+
+2． 在C语言运行环境下，编辑录入源程序。
+
+3． 调试运行源程序， 注意观察调试运行过程中发现的错误及改正方法。
+
+4． 掌握如何根据出错信息查找语法错误。
+
+5. 最后提交带有充分注释的源程序文件（扩展名为.c）。要求该文件必须能够正确地编译及运行，并不得与他人作品雷同。
+
+三、实验内容
+
+编程序实现如下功能：输入任意一个年份，求出从公元1年1月1日到这一年每个月的1日总共有多少天，并求出这一年每个月的1日是星期几，再按以下格式输出该年份全年的公历日历。
+　
+要求用循环控制打印。
+
+提示：可以将每个月的总天数存入到一个数组中，但是不需要将一个月的每一天存入到数组中。
+
+打印样例如下：                        
+```
+9月
+
+   ----------------------------
+
+日	一	二	三	四	五	六
+						1
+2	3	4	5	6	7	8
+9	10	11	12	13	14	15
+16	17	18	19	20	21	22
+23	24	25	26	27	28	29
+30
+
+   ---------------------------    
+```
+
+四、常见问题
+
+疑问1：如何控制某个月1日的打印位置？
+　
+答：先由程序计算出来该月份的1日是星期几，然后控制在打印“1”之前打印相应个数的空格。
+
+疑问2：如何控制每周和每月的打印换行？
+
+答：可以根据当前这一天的打印位置控制每周的打印换行，并根据该月份的天数控制每月的打印换行。
+# 题目分析
+这个题目可以把上一道题的那几个主要的函数放过来,然后就是再添加一个复杂一点的打印函数就可以解决问题了,因为这个题要求用循环打印日历表,所以我只能用循环打印了,这是整个代码里面唯一有循环的地方.
+# 我的代码
+同样的,为了适配VS2017,我写成了C++的版本.
+```
+//本程序需要在编译时打开尾递归优化,不开尾递归优化有可能堆栈溢出，不过最大层数应该不超过30000
+// gcc 的优化选项 ~-O1 -foptimize-sibling-calls~  或 ~-O2~
+#include"stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+char* Weekdays[] = { "日","一","二","三","四","五","六" };
+
+int getYearDays(int year) {//int -> int
+						   //这一个函数写的是获取本年的天数
+	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+		return 366;
+	}
+	else {
+		return 365;
+	}
+}
+int getMonthDays(int year, int month) {//(int,int) -> int
+									   //获得本月的天数
+	int months[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+	if (getYearDays(year) == 366) {
+		months[1] = 29;
+	}
+	return months[month - 1];
+}
+int getToLastYearsDays(int sum, int year) {//(int,int) -> int
+										   //get from AD 1 to this year's before year's last day.
+	if (year <= 1) {
+		return sum + getYearDays(year);
+	}
+	else {
+		return getToLastYearsDays(sum + getYearDays(year), year - 1);
+	}
+}
+int getToLastMonthsDays(int sum, int year, int months) {// (int,int,int) -> int
+														//Only get this year's before this month's days sum.
+	if (months == 0) return sum;
+	return getToLastMonthsDays(sum + getMonthDays(year, months), year, months - 1);
+}
+
+int getWeekday(int day) {//int -> int
+	return day % 7;
+}
+
+void printALLYearMonth(int year) {
+	int sum = 0, idi, day, idj, ido, today, thisMonthDay;
+	sum = getToLastYearsDays(sum, year - 1) + 1;
+	for (idi = 0; idi < 12; idi++) {
+		day = getWeekday(sum);
+		printf("\t\t\t%d月\n", idi + 1);
+		printf("--------------------------------------------------\n");
+		for (ido = 0; ido < 7; ido++) {
+			printf("%s\t", Weekdays[ido]);
+		}
+		printf("\n\t");
+		today = 0;
+		thisMonthDay = getMonthDays(year, idi + 1);
+		for (idj = 0; idj < 42; idj++) {
+			if (idj<day) {
+				printf("  \t");
+				continue;
+			}
+			if ((idj + 1) % 7 == 0) {
+				printf("\n");
+			}
+			printf("%d\t", ++today);
+			if (today == thisMonthDay) {
+				printf("\n--------------------------------------------------\n");
+				printf("\n\n");
+				break;
+			}
+		}
+		if (idi == 0) {
+			sum += thisMonthDay - 1;
+		}
+		else {
+			sum += thisMonthDay;
+		}
+	}
+
+}
+
+int main(int argc, char const *argv[]) {
+	int year;
+	int month;
+	int day;
+	int sum = 0;
+	//printf("%d\n",getYearDays(100));
+	printf("请输入年份:\n");
+	scanf("%d", &year);
+	printALLYearMonth(year);
+	//printf("到前一年年末的天数=%d\n",sum=getToLastYearsDays(sum,year-1));
+	//printf("到前一个月月末的天数=%d\n",sum=getToLastMonthsDays(sum,year,month-1));
+	//printf("到这一天的天数=%d\n",sum+=day);
+	//printf("这一天是%s\n",Weekdays[getWeekday(sum)]);
+	system("pause");
+	return 0;
+}
+```
+# 写在最后
+这段代码整体来说还是有问题的,问题主要出在计算星期几上面,好像是我的这个代码总是计算星期几的时候总是计算晚了一天,然后有时候一个月的第一天会出现在第二行,我记得之前解决了来着,但是我不知道怎么回事这个代码又出故障了,哎.

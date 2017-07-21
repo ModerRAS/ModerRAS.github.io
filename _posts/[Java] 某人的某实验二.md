@@ -1,0 +1,184 @@
+# 写在开始
+这篇接上一篇,只不过是实验二,应该说是我在里面故意写的复杂了一点,而且故意没有用任何条件判断语句,只用了带资源的try和一个简单的反射.
+# 所谓的实验二
+## 实验名称：面向对象程序设计（二）
+
+### 【一】实验内容及要求
+#### 实验目的：
+1.	了解包的作用，掌握包的层次结构结构
+2.	理解接口作用，掌握接口的使用技术
+#### 实验内容：
+1. 定义一个接口，接口中有四个抽象方法：求面积方法、求周长方法、显示面积方法及显示周长方法。定义Circle类和Rectangle类分别实现接口，在主类中实现显示圆和矩形的面积和周长。
+
+2. 重写上面的程序，要求矩型，圆的类放到不同的包中，用包的技术组织程序的设计。同时要求程序能从键盘上接受数据以便求解不同的几何图形的周长面积。
+#### 提示：从键盘上输入双精度数的一种方法(程序片段)
+#### 实验步骤：（写出程序）
+#### 实验小结：（调试过程中遇到的问题）
+
+## 看到这里的反应
+和实验目的一样,这个程序就是让学生知道怎么用包来组织代码的,然后就是会用接口.程序内部的算法并不复杂,所以只要会用包来管理代码这个题并不算什么,不过Java不就是这个风格嘛,知道的越多的人越厉害.
+
+# 直接上代码了......
+我在写的时候问了一下我那个朋友这些代码的运行环境是啥,结果他说他不知道,所以我就默认按照Java 8 规范来写的,所以用到了默认方法.
+
+接口定义:
+
+```
+package org.xxx.shiyan;
+
+public interface AbstractShape {
+    double getArea(double a,double b);
+    double getPerimeter(double a,double b);
+    default void printArea(double a, double b){
+        System.out.println("面积是: "+getArea(a,b));
+    }
+    default void printPerimeter(double a, double b){
+        System.out.println("周长是: "+getPerimeter(a,b));
+    }
+    public void toPrint();
+}
+```
+
+用来计算圆的:
+
+```
+package org.xxx.shiyan.Circle;
+
+import org.xxx.shiyan.AbstractShape;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Circle implements AbstractShape {
+
+    private static final double PI = 3.14159265358;
+    @Override
+    /*
+       a是半径,b没用
+       @return Area;
+     */
+    public double getArea(double a, double b) {
+        return 2*a*a*PI;
+    }
+
+    @Override
+    /*
+      a是半径,b没用
+      @return Perimeter;
+     */
+    public double getPerimeter(double a, double b) {
+        return 2*a*PI;
+    }
+    @Override
+    public void toPrint(){
+        try(InputStreamReader reader = new InputStreamReader(System.in);
+            BufferedReader bufferedReader = new BufferedReader(reader);) {
+            System.out.println("请输入圆形的半径: ");
+            double a = Double.valueOf(bufferedReader.readLine());
+            double b = 0;
+            printArea(a,b);
+            printPerimeter(a,b);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
+用来计算矩形的:
+
+```
+package org.xxx.shiyan.Rectangle;
+
+import org.xxx.shiyan.AbstractShape;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Rectangle implements AbstractShape {
+
+    /*
+      a是长,b是宽
+      @return Area;
+     */
+    @Override
+    public double getArea(double a, double b) {
+        return a*b;
+    }
+
+
+    /*
+      a是长,b是宽
+      @return Perimeter;
+     */
+    @Override
+    public double getPerimeter(double a, double b) {
+        return (a+b)*2;
+    }
+    @Override
+    public void toPrint() {
+        try(InputStreamReader reader = new InputStreamReader(System.in);
+            BufferedReader bufferedReader = new BufferedReader(reader);) {
+            System.out.println("请输入矩形的长度: ");
+            double a = Double.valueOf(bufferedReader.readLine());
+            System.out.println("请输入矩形的宽度: ");
+            double b = 0;
+            try {
+                b = Double.valueOf(bufferedReader.readLine());
+            }
+            catch (NumberFormatException ignored){
+
+            }
+            printArea(a,b);
+            printPerimeter(a,b);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+}
+```
+
+纯粹为了方便反射而写的一个类,感觉其实可以融合在Main类里的:
+```
+package org.xxx.shiyan;
+
+
+public class ShapeConstructor {
+    public static AbstractShape isinstance(String ClassName) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        return (AbstractShape)Class.forName(ClassName).newInstance();
+    }
+}
+```
+
+Main类:
+
+```
+package org.xxx.shiyan;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("请选择计算矩形(Rectangle)或圆形(Circle):");
+        try(InputStreamReader reader = new InputStreamReader(System.in);
+            BufferedReader bufferedReader = new BufferedReader(reader);) {
+            String str = bufferedReader.readLine();
+            AbstractShape shape = ShapeConstructor.isinstance("org.xxx.shiyan."+str+"."+str);
+            shape.toPrint();
+        } catch (IOException | IllegalAccessException | ClassNotFoundException | InstantiationException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+```
+
+# 写在最后
+这个程序上来感觉接口里面有两个方法冗余,就是那两个打印出来的方法,所以我直接写成了默认方法,还省得去在每一个类里定义,然后圆和矩形的类和包都是特意定制的,因为题目要求要把这些放在不同的包里,但是却没说放在啥包里,所以我特意把包名和类名写成一样的了,然后再去反射然后强制类型转换成`AbstractShape`接口然后调用里面的那个我在每一个类里定义的那个打印用的函数,于是绕过了条件判断,直接反射,找不到类就报错.写的还是挺粗暴的,这个也就是这个程序的一大漏洞,如果开始的时候输错了字符串的话,后面反射就会报错,而`catch`里面我又习惯性的只是打印堆栈,所以显得不友好,不过也就是这样了,感觉做的还是不错的,就是在题目要求的基础上又加了几个函数和类,不知道符不符合他的要求.
