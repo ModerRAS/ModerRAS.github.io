@@ -1,3 +1,9 @@
+---
+layout: post
+title: Hello World - Vno
+date: 2016-02-16 15:32:24.000000000 +09:00
+---
+
 # Writing At First
 Today I will write something about git and delete files. Because I find it is a problem.
 # How to delete files on the GitHub?

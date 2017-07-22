@@ -1,3 +1,9 @@
+---
+layout: post
+title: Hello World - Vno
+date: 2016-02-16 15:32:24.000000000 +09:00
+---
+
 # Writing At First
 Because Atom uses a lot of CoffeeScript to product itself. And writing some plugins can use it through JavaScript is also allowed. So I will study it to write some Atom plugins or Chrome plugins.
 

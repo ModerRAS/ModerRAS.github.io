@@ -1,4 +1,10 @@
- # How to use GitHub in Idea
+---
+layout: post
+title: Clone failed Could not read from remote repository when Idea using GitHub
+date: 2017-05-29 12:00:00 +08:00
+---
+
+# How to use GitHub in Idea
 
 Today I try to use GitHub in Idea, and I Configure the option. But I find some error here.
 

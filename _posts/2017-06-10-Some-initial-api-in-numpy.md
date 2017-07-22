@@ -1,3 +1,9 @@
+---
+layout: post
+title: Hello World - Vno
+date: 2016-02-16 15:32:24.000000000 +09:00
+---
+
 # Writing At First
 
 This note I will say something about numpy. And what I will say is most about initial function like some functions that create some objects.

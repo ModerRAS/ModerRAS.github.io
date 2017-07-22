@@ -1,3 +1,9 @@
+---
+layout: post
+title: Hello World - Vno
+date: 2016-02-16 15:32:24.000000000 +09:00
+---
+
 # 写在开始
 最近刚发现GitHub pages是免费服务,所以打算弄开玩玩.
 # 一些使用限制

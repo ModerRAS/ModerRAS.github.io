@@ -1,3 +1,9 @@
+---
+layout: post
+title: Hello World - Vno
+date: 2016-02-16 15:32:24.000000000 +09:00
+---
+
 # 写在开始
 今天跟着Unity的Survival Shooter 官方YouTube教程学习,但是到了NavMeshAgent那一部分的时候发现一个小错误,并不知道原因,在这里记录一下.
 # 错误内容

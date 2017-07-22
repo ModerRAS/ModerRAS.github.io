@@ -1,3 +1,9 @@
+---
+layout: post
+title: Hello World - Vno
+date: 2016-02-16 15:32:24.000000000 +09:00
+---
+
 # Writing At First
 Because I find my Parser maybe use sql can make it work better and in Scala it don't have a good way to use sql without a MySQL or MariaDB or PGSQL. So I try to use Python with sqlite to make it . And I use sqlite3 and Python 3.5 and requests and BeautifulSoup4. This blog I will write something about requests.
 # Requests: HTTP for Humans

@@ -1,3 +1,9 @@
+---
+layout: post
+title: Hello World - Vno
+date: 2016-02-16 15:32:24.000000000 +09:00
+---
+
 Before long I just in my senior high school. I try to install a arch Linux. Because I see a blog or a answer and find that if you want to study Linux try to use arch Linux or gentoo Linux. And it can be build as whatever you want. So at that time, I download an arch Linux and try to install it on the virtual machine named VMware. After I mount the ISO on the virtual machine, I found it just have a terminal. So I searched tutorials on the internet. Because at that time I can't over the wall, I can only use Baidu. So I searched tutorials for a long time. But I didn't find any useful tutorial. I just followed an old tutorial. So in the end, I failed to install that operating system. But now I think I can try it again because I have Google and arch Linux's wiki also some tutorials which seemed newer. So I think this time I may be succeed.
 
 So this time I will say how to install a arch Linux on the VMware. Firstly, create a new virtual machine. I think it's easy. So I didn't say that. I just say I give virtual machine 1Gib memory and 20G hard disk. This time I just use legacy boot, because I try uefi boot and it may not work at virtual machine. Then I start the virtual machine. And it will show :

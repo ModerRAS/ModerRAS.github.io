@@ -1,3 +1,9 @@
+---
+layout: post
+title: My second blog about github user profile parser
+date: 2017-05-28 12:00:00 +8
+---
+
 Now I write my second blog. It’s also a web spider but for github. Our teacher said that github is a social coding and want me to find some api about github in order to know our active in github. But I search that api and find that v3 and v4 api I found didn’t have what I need. So I can only use something likes spider.😥😥
 
 Because github is the social coding. I need to create a harmless spider. I think it’s just use less than twenty http get a day. So I think it’s nothing. This spider I use Scala and jsoup to create. The reason why I use jsoup is that I find github user profile website is nearly a static website.
