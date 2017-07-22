@@ -7,9 +7,7 @@ layout: default
     <div class="post-meta">
       <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226;
       <span class="post-meta__tags tags">
-          {% for tag in page.tags %}
-            {{ tag }} ,
-          {% endfor %}
+          {{ page.tags }}
           </span>
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
