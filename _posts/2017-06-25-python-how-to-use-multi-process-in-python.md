@@ -1,7 +1,8 @@
 ---
 layout: post
-title: python how to use multi process in python
+title: How To Use Multi Process In Python
 date: 2017-06-25 12:00:00 +08:00
+tags: [Python]
 ---
 
 # Writing At First

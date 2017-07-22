@@ -1,7 +1,8 @@
 ---
 layout: post
-title: blender blender 2.78 汉化问题
+title: Blender 2.78 汉化问题
 date: 2017-06-29 12:00:00 +09:00
+tags: [Blender]
 ---
 
 # 写在开始

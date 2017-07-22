@@ -2,6 +2,7 @@
 layout: post
 title: Writing Something about CNN
 date: 2017-06-10 12:00:00 +08:00
+tags: [Deep Learning]
 ---
 
 # Writing Something about CNN

@@ -1,7 +1,8 @@
 ---
 layout: post
-title: how can requests use proxy
+title: How Can Requests Use Proxy
 date: 2017-06-15 12:00:00 +08:00
+tags: [Python]
 ---
 
 # Writing At First

@@ -1,7 +1,8 @@
 ---
 layout: post
-title: how can requests changes user agent
+title: How Can Requests Changes User Agent
 date: 2017-06-15 12:00:00 +08:00
+tags: [Python]
 ---
 
 # Writing At First

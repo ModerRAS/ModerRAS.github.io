@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Clone failed Could not read from remote repository when Idea using GitHub
+title: Clone failed: Could not read from remote repository when Idea using GitHub
 date: 2017-05-29 12:00:00 +08:00
+tags: [IDE,Git,GitHub]
 ---
 
 # How to use GitHub in Idea

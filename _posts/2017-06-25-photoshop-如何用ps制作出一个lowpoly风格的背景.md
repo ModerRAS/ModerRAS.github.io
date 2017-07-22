@@ -1,7 +1,8 @@
 ---
 layout: post
-title: photoshop 如何用ps制作出一个lowpoly风格的背景
+title: 如何用ps制作出一个lowpoly风格的背景
 date: 2017-06-25 12:00:00 +08:00
+tags: [Photoshop]
 ---
 
 # 写在开始

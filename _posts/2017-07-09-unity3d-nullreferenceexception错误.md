@@ -1,7 +1,8 @@
 ---
 layout: post
-title: unity3d nullreferenceexception错误
+title: Nullreferenceexception错误
 date: 2017-07-09 12:00:00 +08:00
+tags: [Unity3d]
 ---
 
 # 写在开始

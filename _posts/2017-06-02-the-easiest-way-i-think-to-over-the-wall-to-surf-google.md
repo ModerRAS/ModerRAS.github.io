@@ -1,7 +1,8 @@
 ---
 layout: post
-title: the easiest way i think to over the wall to surf google
+title: The Easiest Way I Think To Over The Wall To Surf Google
 date: 2017-06-02 12:00:00 +08:00
+tags: [GFW]
 ---
 
 # The easiest way to over the wall to surf Google I think

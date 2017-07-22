@@ -1,7 +1,8 @@
 ---
 layout: post
-title: how to use beautifulsoup
+title: How To Use Beautifulsoup
 date: 2017-06-15 12:00:00 +08:00
+tags: [Python]
 ---
 
 # Writing At First

@@ -1,7 +1,8 @@
 ---
 layout: post
-title: the start of coffeescript
+title: The Start Of CoffeeScript
 date: 2017-06-15 12:00:00 +08:00
+tags: [CoffeeScript]
 ---
 
 # Writing At First

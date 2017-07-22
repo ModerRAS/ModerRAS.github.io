@@ -1,7 +1,8 @@
 ---
 layout: post
-title: how to delete files on git
+title: How To Delete Files On Git
 date: 2017-06-11 12:00:00 +08:00
+tags: [Git]
 ---
 
 # Writing At First

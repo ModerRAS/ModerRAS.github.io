@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Some initial api in numpy
+title: Some Initial Api In Numpy
 date: 2017-06-10 12:00:00 +08:00
+tags: [Python]
 ---
 
 # Writing At First

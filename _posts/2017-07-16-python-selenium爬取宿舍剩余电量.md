@@ -1,7 +1,8 @@
 ---
 layout: post
-title: python selenium爬取宿舍剩余电量
+title:  selenium爬取宿舍剩余电量
 date: 2017-07-16 12:00:00 +08:00
+tags: [Python]
 ---
 
 # 写在开始

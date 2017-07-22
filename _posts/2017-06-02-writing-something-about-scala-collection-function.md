@@ -1,7 +1,8 @@
 ---
 layout: post
-title: writing something about scala collection function
+title: Writing Something About Scala Collection Function
 date: 2017-06-02 12:00:00 +08:00
+tags: [Scala]
 ---
 
 ### write something about Scala collection function

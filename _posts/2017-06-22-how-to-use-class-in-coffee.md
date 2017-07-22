@@ -1,7 +1,8 @@
 ---
 layout: post
-title: how to use class in coffee
+title: How To Use Class In Coffee
 date: 2017-06-22 12:00:00 +08:00
+tags: [CoffeeScript]
 ---
 
 # Writing At First

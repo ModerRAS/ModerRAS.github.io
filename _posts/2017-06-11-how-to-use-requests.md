@@ -1,7 +1,8 @@
 ---
 layout: post
-title: how to use requests
+title: How To Use Requests
 date: 2017-06-11 12:00:00 +08:00
+tags: [Python]
 ---
 
 # Writing At First
