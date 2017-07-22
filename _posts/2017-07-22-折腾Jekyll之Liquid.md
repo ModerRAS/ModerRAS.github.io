@@ -23,7 +23,7 @@ tags: [Jekyll]
 
 # 基本语法
 
-Liquid的语句都是包在{{ expressions }}或者{% expressions %}中的.
+Liquid的语句都是包在`{{ expressions }}`或者`{% expressions %}`中的.
 然后下面是一些常见的标记
 
 > assign - 赋值给某个变量Assigns some value to a variable
@@ -111,7 +111,7 @@ the first element of the passed in array
 
 这些就当作API文档放在这里吧,也就是现用现查了.
 
-然后就是一些规则,所有的语句都在{{}}和{%%}里面,而且每一个这个里面只有一个语句,这个设定很奇怪,但是应该是当做标记吧.
+然后就是一些规则,所有的语句都在`{{}}`和`{%%}`里面,而且每一个这个里面只有一个语句,这个设定很奇怪,但是应该是当做标记吧.
 
 还有一个就是`for`后面带着`endfor`,`if`后面带着`endif`,`else if`性质的语句写作`elsif`,需要写的基本语法应该就这些了吧,`when`没搞懂,应该类似于kotlin里面的那个when,但是估计我也用不着太多,所以就不看了.
 
