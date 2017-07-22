@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Hello World - Vno
-date: 2016-02-16 15:32:24.000000000 +09:00
+title: blender blender 2.78 汉化问题
+date: 2017-06-29 12:00:00 +09:00
 ---
 
 # 写在开始

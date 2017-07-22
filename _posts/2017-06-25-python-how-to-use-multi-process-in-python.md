@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Hello World - Vno
-date: 2016-02-16 15:32:24.000000000 +09:00
+title: python how to use multi process in python
+date: 2017-06-25 12:00:00 +08:00
 ---
 
 # Writing At First
