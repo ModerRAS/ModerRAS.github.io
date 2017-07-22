@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [GitHub] 使用GitHub Pages
+title: 使用GitHub Pages
 date: 2017-07-21 12:00:00 +08:00
 ---
 
