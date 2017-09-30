@@ -2,7 +2,7 @@
 title: ModerRAS's Blog
 subtitle: By ModerRAS
 welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-description: 闲着无聊搞着玩的博客
+description: Just for fun!
 creator: <a href="https://moderras.github.io">@ModerRAS</a>
 
 url: "https://moderras.github.io"
@@ -23,7 +23,7 @@ blog_button:
 # Navigation buttons in the front page.
 nav:
     - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
-    
+
 
 # Pagination
 gems: [jekyll-paginate]
