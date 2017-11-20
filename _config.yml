@@ -45,5 +45,5 @@ social:
 
 # Google Analytics
 ga:
-    # id: your_ga_id
-    # host: your_host
+    id: UA-109836282-1
+    host: moderras.github.io
