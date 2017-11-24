@@ -44,7 +44,7 @@ pacstrap -i /mnt base base-devel
 Just press enter is OK. Then it will install.
 ![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/install_default_all.png)
 
-Then use `genfstab -U -p /mnt/etc/fstab` to create fstab file (just a safety belt).
+Then use `genfstab -U -p /mnt > /mnt/etc/fstab` to create fstab file (just a safety belt).
 Then you can check that file in order to be safely.
 
 Then join new system `arch-chroot /mnt /bin/bash `. Be safety and command `mkinitcpio -p linux `. Then `passwd`. After you press enter write your password. Then set host name `echo yourhostname &gt; /etc/hostname`. Then add it to `/etc/hosts` as:
