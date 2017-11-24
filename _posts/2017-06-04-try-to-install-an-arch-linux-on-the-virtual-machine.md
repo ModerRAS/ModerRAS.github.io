@@ -38,7 +38,7 @@ Then flush the pacman `pacman -Syy`.
 And start to install the system.
 
 ```
-pacstrap -I /mnt base base-devel
+pacstrap -i /mnt base base-devel
 ```
 ![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/install_default.png)
 Just press enter is OK. Then it will install.
