@@ -31,7 +31,8 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
     </script>
-    {% elsif site.comment.gitalk %}
+    {% endif %}
+    {% if site.comment.gitalk %}
     <!-- Gitalk 评论 start  -->
 
     <!-- Link Gitalk 的支持文件  -->
@@ -48,7 +49,7 @@
             repo: `blogcomments`,
             owner: 'modereas',
             admin: ['modereas','moderras'],
-            id: "hello",
+            id: md5("{{page.url}}"),
 
         });
         gitalk.render('gitalk-container');
