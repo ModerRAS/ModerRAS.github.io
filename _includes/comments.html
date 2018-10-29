@@ -48,13 +48,31 @@
             clientSecret: `500c4d9de03bb42becc5b493b2c5ff8d9f7b8261`,
             repo: `blogcomments`,
             owner: 'modereas',
-            admin: ['modereas','moderras'],
+            admin: ['modereas', 'moderras'],
             id: md5("{{page.url}}"),
 
         });
         gitalk.render('gitalk-container');
     </script>
     <!-- Gitalk end -->
+    {% elsif site.comment.gitment %}
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+        const gitment = new Gitment({
+            id: 'ModerRAS', // optional
+            owner: 'modereas',
+            repo: 'blogcomments',
+            oauth: {
+                client_id: '15109b1a55195310fc97',
+                client_secret: '500c4d9de03bb42becc5b493b2c5ff8d9f7b8261',
+            },
+            // ...
+            // For more available options, check out the documentation below
+        })
+
+        gitment.render('comments')
+    </script>
     {% endif %}
 
 
