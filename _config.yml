@@ -32,8 +32,9 @@ paginate_path: "page/:num/"
 
 # Comment
 comment:
-    disqus: moderras
+    # disqus: moderras
     # duoshuo:
+    gitalk: moderras
 
 # Social
 social:
