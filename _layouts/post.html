@@ -7,7 +7,7 @@ layout: default
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
       </script>
     <div class="post-meta">
-      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; <span class="post-meta__tags tags">{% for tag in page.tags %}<span class="post-meta__tags tags">{{ tag | xml_escape }}</span> &#8226; {% endfor %}</span><span id="busuanzi_container_page_pv" class="post-meta__date date"><span id="busuanzi_value_page_pv"></span> 阅读</span>
+      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; {% for tag in page.tags %}<span class="post-meta__tags tags">{{ tag | xml_escape }}</span> &#8226; {% endfor %}<span id="busuanzi_container_page_pv" class="post-meta__date date"><span id="busuanzi_value_page_pv"></span> 阅读</span>
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
