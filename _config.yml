@@ -1,7 +1,7 @@
 # Basic
-title: ModerRAS's Blog
+title: 喵星人聚居地
 subtitle: By ModerRAS
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
+welcome_message: 一群喵星人待的地方
 description: Just for fun!
 creator: <a href="https://moderras.github.io">@ModerRAS</a>
 
@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
+    - {title: Theme, description: This theme projects, url: 'http://project.onevcat.com'}
 
 
 # Pagination
