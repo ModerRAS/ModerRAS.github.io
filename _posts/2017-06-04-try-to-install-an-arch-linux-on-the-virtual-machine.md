@@ -9,19 +9,19 @@ Before long I just in my senior high school. I try to install a arch Linux. Beca
 
 So this time I will say how to install a arch Linux on the VMware. Firstly, create a new virtual machine. I think it's easy. So I didn't say that. I just say I give virtual machine 1Gib memory and 20G hard disk. This time I just use legacy boot, because I try uefi boot and it may not work at virtual machine. Then I start the virtual machine. And it will show :
 
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/boot.png)
+[![boot.png](https://i.loli.net/2018/12/04/5c05d614ba6d8.png)](https://i.loli.net/2018/12/04/5c05d614ba6d8.png)
 
 Select the first one. And then you can see:
 
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/run.png)
+[![run.png](https://i.loli.net/2018/12/04/5c05d62fae57b.png)](https://i.loli.net/2018/12/04/5c05d62fae57b.png)
 
 My hard disk is in /dev/sda.
 So it need to use `cfdisk /dev/sda` to partition my virtual disk.
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/cfdisk_select.png)
+[![cfdisk_select.png](https://i.loli.net/2018/12/04/5c05d6490249d.png)](https://i.loli.net/2018/12/04/5c05d6490249d.png)
 Select dos.
 
 I give / 19G and give swap 1G.
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/cfdisk_fin.png)
+[![cfdisk_fin.png](https://i.loli.net/2018/12/04/5c05d66604838.png)](https://i.loli.net/2018/12/04/5c05d66604838.png)
 Then select write and then quit.
 
 After quit, it need to `mkfs`. Using `mkfs.ext4 /dev/sda1`to make file system as ext4. Also the swap is need to be formatted. Using `mkswap /dev/sda2` and then `swapon /dev/sda2` to use swap.
@@ -40,9 +40,11 @@ And start to install the system.
 ```
 pacstrap -i /mnt base base-devel
 ```
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/install_default.png)
+[![install_default.png](https://i.loli.net/2018/12/04/5c05d687555ec.png)](https://i.loli.net/2018/12/04/5c05d687555ec.png)
+
 Just press enter is OK. Then it will install.
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/install_default_all.png)
+
+[![install_default_all.png](https://i.loli.net/2018/12/04/5c05d6a4c9fe8.png)](https://i.loli.net/2018/12/04/5c05d6a4c9fe8.png)
 
 Then use `genfstab -U -p /mnt > /mnt/etc/fstab` to create fstab file (just a safety belt).
 Then you can check that file in order to be safely.
@@ -82,4 +84,4 @@ After I run it I get an error `Piix4_SMBus: 000:00:07.3: Host SMBus controller b
 The last error I get is `failed to start login service`. And I didn't find any useful answer. Also it is not appear when I restart and restart and restart.😥😥😥
 
 Now it runs!
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/06/sucess.png)
+[![sucess.png](https://i.loli.net/2018/12/04/5c05d6c078c0c.png)](https://i.loli.net/2018/12/04/5c05d6c078c0c.png)

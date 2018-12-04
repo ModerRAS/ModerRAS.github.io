@@ -13,7 +13,7 @@ Today I try to use GitHub in Idea, and I Configure the option. But I find some e
 
 So I try to search that on Google, and I find an answer in Stack Overflow.
 > settings-->Version Control-->Git ,and then, In the SSH executable dropdown, choose Native
-> ![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/05/2017.5.29-git-1024x700.png)
+> [![2017.5.29-git-1024x700.png](https://i.loli.net/2018/12/04/5c05d5a77e22d.png)](https://i.loli.net/2018/12/04/5c05d5a77e22d.png)
 
 Another answer said that:
 > We've recently updated from IntelliJ 12 to IntelliJ 14 Ultimate and we've encountered this problem too. Our solution was to disable the proxy in the settings. We also stopped remembering the passwords once, but might not sure if that helps. Proxy settings are under File-Settings-Apearance & Behavior-System settings-HTTP Proxy.
@@ -21,5 +21,5 @@ Another answer said that:
 But the truth is that after I get that error, I think it is because I didn't open the proxy. Then I open it. And it did nothing.
 
 The last I resolve the this question is just like this :
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/05/2017.5.29-github.png)
+[![2017.5.29-github.png](https://i.loli.net/2018/12/04/5c05d5d2782cd.png)](https://i.loli.net/2018/12/04/5c05d5d2782cd.png)
 Then it will clone repository without using ssh. And I will not get that error. I don't know why I can't use ssh. Is it because I didn't deploy a public Key ? But I truly never use ssh to clone Git repository or push commits. I always use https.
