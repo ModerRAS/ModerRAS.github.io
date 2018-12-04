@@ -72,6 +72,6 @@ if __name__ == '__main__':
 
 来一张效果图:
 
-![](http://softlab.sdut.edu.cn/blog/yinjunbo/wp-content/uploads/sites/16/2017/07/selenium_SDUTEnergyParser_1.png)
+[![selenium_SDUTEnergyParser_1.png](https://i.loli.net/2018/12/04/5c05e6e91ec7e.png)](https://i.loli.net/2018/12/04/5c05e6e91ec7e.png)
 
 Tips : 因为Python3里面源代码的编码是`UTF-8`的,而且所有的有效的`UTF-8`字符都可以当做变量名和函数名,写这个程序基本上是因为用`requests`+`BeautifulSoup`没写出来的替代品,所以有一些变量名懒得去找对应的英文名,而且有觉得用拼音有失文雅,所以直接用中文了.
