@@ -11,6 +11,7 @@ layout: default
   </header>
 
   <section class="post">
+    {{ content }}
     {% for friend in site.friends %}
     <a class="a-friend" style="display: flex;padding: 0 60px;margin-top:10px" target="_blank" href="{{friend.url}}"><img class="blog-avatar" src="{{friend.avatar}}"><div class="text-container"><div class="name">{{friend.name}}</div><div class="description">{{friend.desc}}</div></div></a>
     {% endfor %}
