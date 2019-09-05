@@ -23,7 +23,7 @@ blog_button:
 # Navigation buttons in the front page.
 nav:
     - {title: Games, description: Flash Games, url: 'https://flash.miaostay.com'}
-    - {title: Friends, description: My Friends, url: 'https://miaostay.com/friends.html'}
+    - {title: Friends, description: My Friends, url: 'https://miaostay.com/pages/friends.html'}
 
 
 # Pagination
@@ -50,6 +50,8 @@ social:
 ga:
     id: UA-109836282-1
     host: miaostay.com
+friends:
+    - {url:'https://rumia.club', avatar:'https://avatars3.githubusercontent.com/u/37037548?s=400&v=4', name:Rumia, desc:"An overfit neural network"}
 
 plugins:
   - jekyll-sitemap
