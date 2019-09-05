@@ -51,7 +51,7 @@ ga:
     id: UA-109836282-1
     host: miaostay.com
 friends:
-    - {url:'https://rumia.club', avatar:'https://avatars3.githubusercontent.com/u/37037548?s=400&v=4', name:Rumia, desc:"An overfit neural network"}
+    - {url: 'https://rumia.club', avatar: 'https://avatars3.githubusercontent.com/u/37037548?s=400&v=4', name: Rumia, desc: "An overfit neural network"}
 
 plugins:
   - jekyll-sitemap
