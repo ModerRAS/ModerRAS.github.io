@@ -7,6 +7,7 @@ tags: [友情链接, 友链]
 
 emmmmmmmmmmmmmmmmm。。。。。。
 
-| 头像 | 名称 | 简介 |
-| ---- | ---- | ---- |
-{% for friend in site.friends %}|![[{{friend.name}}]({{friend.url}})]({{friend.avatar}}) |[{{friend.name}}]({{friend.url}}) |{{friend.desc}} |{% endfor %}
+{% for friend in site.friends %}| 人家的小脸脸 |[![]({{friend.avatar}})]({{friend.url}})|
+|---|---|
+| 人家的名字 |[{{friend.name}}]({{friend.url}})|
+| 人家的话话 |{{friend.desc}} |{% endfor %}
