@@ -7,4 +7,6 @@ tags: [友情链接, 友链]
 
 emmmmmmmmmmmmmmmmm。。。。。。
 
-<div>{% for friend in site.friends %}<a class="a-friend" style="display: flex;padding: 0 60px;margin-top:10px" target="_blank" href="{{friend.url}}"><img class="blog-avatar" src="{{friend.avatar}}"><div class="text-container"><div class="name">{{friend.name}}</div><div class="description">{{friend.desc}}</div></div></a>{% endfor %}</div>
+| 头像 | 名称 | 简介 |
+| ---- | ---- | ---- |
+{% for friend in site.friends %}|![[{{friend.name}}]({{friend.url}})]({{friend.avatar}}) |[{{friend.name}}]({{friend.url}}) |{{friend.desc}} |{% endfor %}
