@@ -172,4 +172,8 @@ services.Add(item: new ServiceDescriptor(typeof(IKVDB), new RocksDBImpl("Databas
 
 ## 写在最后
 
-经过这一般奇特的操作之后我终于可以使用谷歌相册来当作一个稳定的图床了, 心情舒畅
+经过这一般奇特的操作之后我终于可以使用谷歌相册来当作一个稳定的图床了, 心情舒畅。
+
+## 后记
+
+代码已开源， 开源协议MIT， [代码在这里](https://github.com/ModerRAS/LinkRedirect)
