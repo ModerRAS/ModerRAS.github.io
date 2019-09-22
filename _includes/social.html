@@ -31,6 +31,16 @@
   </li>
   {% endif %}
 
+  {% if site.social.mastodon %}
+  <!-- Twitter -->
+  <li class="navigation__item">
+    <a href="{{site.social.twitter}}" title="@{{site.social.twitter}}" target="_blank">
+      <i class='social fa fa-mastodon'></i>
+      <span class="label">Mastodon</span>
+    </a>
+  </li>
+  {% endif %}
+
   {% if site.social.gplus %}
   <!-- Google Plus -->
   <li class="navigation__item">
