@@ -8,7 +8,7 @@ layout: default
       </script>
       <script type="text/javascript">
         $(document).ready(function() {
-            var imgs = document.getElementByClassName("post").getElementsByTagName("img");
+            var imgs = document.getElementsByClassName("post")[0].getElementsByTagName("img");
             for(var i = 0;i < imgs.length;i++) {
                 imgs[i].src = "https://link.miaostay.com/?="+imgs[i].src
             }
