@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  var imgs = document.getElementsByTagName("img");
-  for(var i = 0;i < imgs.length;i++) {
-      imgs[i].src = "https://link.miaostay.com/?="+imgs[i].src
-  }
 
   $('a.blog-button').click(function() {
     // If already in blog, return early without animate overlay panel again.
