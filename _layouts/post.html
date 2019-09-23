@@ -6,13 +6,6 @@ layout: default
       <script type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
       </script>
-      <script type="text/javascript">
-        var imgs = document.getElementsByClassName("post")[0].getElementsByTagName("img");
-        for(var i = 0;i < imgs.length;i++) {
-            imgs[i].src = "https://link.miaostay.com/?="+imgs[i].src
-        }
-          
-      </script>
     <div class="post-meta">
       <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; {% for tag in page.tags %}<span class="post-meta__tags tags">{{ tag | xml_escape }}</span> &#8226; {% endfor %}<span id="busuanzi_container_page_pv" class="post-meta__date date"><span id="busuanzi_value_page_pv"></span> 阅读</span>
     </div>
